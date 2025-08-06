@@ -3,23 +3,23 @@ import * as React from "react";
 import { Crud } from "@toolpad/core/Crud";
 import { useParams } from "next/navigation";
 import CustomDataGrid from "@/app/components/CustomDataGrid";
-import { App, appsCache, appsDataSource } from "./hooks";
+import { User, usersCache, usersDataSource } from "./hooks";
 
-export default function AppsCrudPage() {
+export default function UsersCrudPage() {
   const params = useParams();
-  const [appId] = params.segments ?? [];
+  const [userId] = params.segments ?? [];
 
   return (
-    <Crud<App>
-      dataSource={appsDataSource}
-      dataSourceCache={appsCache}
-      rootPath="/apps"
+    <Crud<User>
+      dataSource={usersDataSource}
+      dataSourceCache={usersCache}
+      rootPath="/users"
       initialPageSize={20}
-      defaultValues={{ title: "New App" }}
+      defaultValues={{ title: "User" }}
       pageTitles={{
-        show: `App ${appId}`,
-        create: "New App",
-        edit: `App ${appId} - Edit`,
+        show: `User ${userId}`,
+        create: "New User",
+        edit: `User ${userId} - Edit`,
       }}
       slots={{
         list: {
