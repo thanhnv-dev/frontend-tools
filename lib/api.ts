@@ -2,9 +2,8 @@ import axios, { AxiosInstance } from "axios";
 
 // Create axios instance with base configuration
 const createApiClient = (): AxiosInstance => {
-  const baseURL =
-    process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
-  const apiKey = process.env.NEXT_PUBLIC_X_API_KEY || "123";
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const apiKey = process.env.NEXT_PUBLIC_X_API_KEY;
 
   const instance = axios.create({
     baseURL,
